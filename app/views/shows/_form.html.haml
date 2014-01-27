@@ -1,0 +1,10 @@
+= simple_form_for(@show) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :last_season
+    = f.input :last_episode
+
+  .form-actions
+    = f.button :submit

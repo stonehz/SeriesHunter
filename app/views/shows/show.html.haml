@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @show.title
+%p
+  %b Last season:
+  = @show.last_season
+%p
+  %b Last episode:
+  = @show.last_episode
+
+= link_to 'Edit', edit_show_path(@show)
+\|
+= link_to 'Back', shows_path

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140127154107) do
+ActiveRecord::Schema.define(:version => 20140127155533) do
+
+  create_table "shows", :force => true do |t|
+    t.string   "title"
+    t.integer  "last_season"
+    t.integer  "last_episode"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

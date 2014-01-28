@@ -31,3 +31,5 @@ end
 
 #rss parsing
 gem 'feedzirra'
+#thin server
+gem 'thin'

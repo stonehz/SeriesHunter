@@ -1,4 +1,18 @@
 %h3 Home
-- @users.each do |user|
+-#- @users.each do |user|
   %p
     User: #{link_to user.name, user}
+= form_for 'send_rss_form',:url => send_rss_for_shows_path,:html => {class: "form-inline"} do |f|
+  .form-group
+    = f.label "RSS Finder" ,class: "sr-only"
+    = f.text_field :rss, :required => '',class: "form-control"
+  = f.submit 'Submit', class: "btn btn-success"
+.jumbotron
+  .col-xs-12.col-sm-6.col-md-8
+
+-#%form.form-inline{:role => "form"}
+  .form-group
+    %label.sr-only{:for => "rss_main_text"} RSS Finder
+    %input#rss_main_text.form-control{:placeholder => "Enter RSS URL", :type => "text"}
+  %button.btn.btn-success{:type => "submit"} Give me Titles and URLs
+

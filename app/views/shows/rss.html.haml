@@ -1,0 +1,15 @@
+-if @results
+  %table.table.table-condensed.table-striped
+    %thead
+      %tr
+        %th #
+        %th Title
+        %th URL
+    %tbody
+      -@results.entries.each_with_index do |entry,ind|
+        %tr
+          %th=ind+1
+          %th=entry.title
+          %th=link_to entry.url,entry.url
+-else
+  %h3 Sorry, URL not processed

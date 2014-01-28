@@ -1,5 +1,6 @@
 class Show < ActiveRecord::Base
-  attr_accessible :last_episode, :last_season, :title
+  attr_accessible :last_episode, :last_season, :title, :rss
+  attr_accessor :rss
   before_create :set_entries
 
   def set_entries

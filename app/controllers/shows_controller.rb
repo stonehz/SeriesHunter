@@ -1,4 +1,5 @@
 class ShowsController < ApplicationController
+  respond_to :html, :json, :js
   # GET /shows
   # GET /shows.json
   def index
@@ -78,6 +79,18 @@ class ShowsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to shows_url }
       format.json { head :no_content }
+    end
+  end
+
+  def rss
+    #if params["send_rss_form"]["rss"] =~ /^#{URI::regexp}$/
+      @results = Feedzirra::Feed.fetch_and_parse(params["send_rss_form"]["rss"])
+    #else
+    #  @results = nil
+    #end
+    respond_to do |format|
+      format.js
+      format.html
     end
   end
 end

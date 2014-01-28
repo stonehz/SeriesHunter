@@ -1,5 +1,7 @@
 SeriesHunter::Application.routes.draw do
-  resources :shows
+  resources :shows do
+    post "rss", to: "shows#rss" ,on: :collection, as: :send_rss_for
+  end
 
 
   authenticated :user do
